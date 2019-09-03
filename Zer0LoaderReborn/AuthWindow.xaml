@@ -1,0 +1,59 @@
+﻿<Window x:Class="Zer0LoaderReborn.AuthWindow"
+        xmlns:local="clr-namespace:Zer0LoaderReborn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="TEST CHEAT" Height="218.952" Width="309.333"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="Transparent"
+        FontFamily="{DynamicResource MaterialDesignFont}" WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Closing="Window_Closing" Initialized="Window_Initialized"
+        ResizeMode="NoResize">
+    <Border Margin="10">
+        <Border.Effect>
+            <DropShadowEffect Color="#FFFF00F3"
+                              Direction="0"
+                              BlurRadius="12" RenderingBias="Quality" ShadowDepth="0" Opacity="0.8"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1E1727" Offset="0"/>
+                    <GradientStop Color="#FF291A2E" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Rectangle x:Name="DragHeader" Height="26" VerticalAlignment="Top" MouseLeftButtonDown="DragHeader_MouseLeftButtonDown" MouseLeftButtonUp="DragHeader_MouseLeftButtonUp" MouseMove="DragHeader_MouseMove" Fill="#FF130F19"/>
+            <Button x:Name="CloseBtn"  Margin="0,2,2,0"  Style="{DynamicResource MaterialDesignToolButton}" Content="{materialDesign:PackIcon Close}"
+                 Height="24" FontSize="14" Background="#FF145291" BorderBrush="#FF124C85" Foreground="#FFEAEAEA" RenderTransformOrigin="0.585,0.818" Click="CloseBtn_Click" VerticalAlignment="Top" HorizontalAlignment="Right" Width="23"/>
+            <Button x:Name="MinBtn"  Margin="0,1,26,0"  Style="{DynamicResource MaterialDesignToolButton}" Content="{materialDesign:PackIcon Minus}"
+                Padding="0,9,0,0" Height="20" FontSize="14" Background="#FF145291" BorderBrush="#FF124C85" Foreground="#FFEAEAEA" RenderTransformOrigin="-0.551,1.683" Click="MinBtn_Click" VerticalAlignment="Top" HorizontalAlignment="Right" Width="19" />
+            <Rectangle Fill="#FF18131F" Height="45" Margin="0,26,0,0" VerticalAlignment="Top"
+                       Grid.Column="0" />
+            <Label Grid.Column="0" Content="TEST CHEAT :: AUTH" HorizontalAlignment="Left" Margin="0,26,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="29" FontWeight="Light" Height="40"/>
+            <TextBox
+                x:Name="TEmail"
+                materialDesign:HintAssist.Hint="Email" Margin="10,81,10,0" Foreground="White" CaretBrush="#FF4E6785" BorderBrush="#FF15161B" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Top"/>
+            <PasswordBox x:Name="TPassword"
+                materialDesign:HintAssist.Hint="Пароль" Margin="10,118,10,0" Foreground="White" CaretBrush="#FF4E6785" BorderBrush="#FF15161B" Height="30" VerticalAlignment="Top" />
+            <Button x:Name="AuthBtn" Content="АВТОРИЗАЦИЯ" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top" Width="269" FontWeight="Normal" Background="#FF130F19" BorderBrush="#FF130F19" Click="AuthBtn_Click"/>
+            <materialDesign:Snackbar
+                IsActive="False"
+                x:Name="SnackbarMessage" Background="#FF15161B">
+                <materialDesign:SnackbarMessage
+                    x:Name="AuthMessage"
+                    Content=""
+                    ActionClick="SnackbarMessage_OnActionClick"
+                    ActionContent="X" Foreground="White"/>
+            </materialDesign:Snackbar>
+        </Grid>
+    </Border>
+</Window>

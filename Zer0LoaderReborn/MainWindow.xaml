@@ -1,0 +1,45 @@
+﻿<Window x:Class="Zer0LoaderReborn.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Zer0LoaderReborn"
+        mc:Ignorable="d"
+        Title="TEST CHEAT" Height="133" Width="390"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="Transparent"
+        FontFamily="{DynamicResource MaterialDesignFont}" WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize">
+    <Border Margin="10">
+        <Border.Effect>
+            <DropShadowEffect Color="#FFFF00F3"
+                              Direction="0"
+                              BlurRadius="12" RenderingBias="Quality" ShadowDepth="0" Opacity="0.8"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1E1727" Offset="0"/>
+                    <GradientStop Color="#FF291A2E" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <StackPanel x:Name="DragHeader" Height="21" VerticalAlignment="Top" Background="#FF130F19" MouseLeftButtonDown="DragHeader_MouseLeftButtonDown" MouseLeftButtonUp="DragHeader_MouseLeftButtonUp" MouseMove="DragHeader_MouseMove"/>
+            <Button x:Name="CloseBtn"  Style="{DynamicResource MaterialDesignToolButton}" Content="{materialDesign:PackIcon Close}" Click="CloseBtn_Click"
+                    Height="21" FontSize="50" Background="#FF145291" BorderBrush="#FF124C85" Foreground="#FFEAEAEA" RenderTransformOrigin="0.585,0.818" Margin="0,-1,0,0" HorizontalAlignment="Right" Width="21" VerticalAlignment="Top"/>
+            <Button x:Name="MinBtn"  Click="MinBtn_Click" Margin="0,0,17,0"  Style="{DynamicResource MaterialDesignToolButton}" Content="{materialDesign:PackIcon Minus}"
+                    Padding="0,7,0,0" Height="18" Width="15" FontSize="14" Background="#FF145291" BorderBrush="#FF124C85" Foreground="#FFEAEAEA" 
+                    Grid.Column="0" IsTabStop="False" IsManipulationEnabled="True" HorizontalAlignment="Right" VerticalAlignment="Top" />
+            <Label x:Name="LName" Content="Игра:" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF"  FontSize="15"/>
+            <Label x:Name="LEndDate" Content="Дата окончания подписки:" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="15"/>
+            <Button Content="ЗАПУСК" HorizontalAlignment="Right" Margin="0,76,10,0" VerticalAlignment="Top" Width="350" Height="28" Background="#FF130F19" BorderBrush="#FF130F19" Click="Button_Click"/>
+            <Label Content="TEST CHEAT" HorizontalAlignment="Left" Margin="1,0,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF"  FontSize="10" Width="71" Height="20"/>
+        </Grid>
+    </Border>
+</Window>
